@@ -27,17 +27,17 @@ export interface AuthorInfoType {
     faviconUrl: string
 }
 const authorInfo: AuthorInfoType = {
-    name: "your name",
-    currentState: "your current state",
-    currentGoal: "your current goal",
+    name: "danpacho",
+    currentState: "Guide how to use blog easily",
+    currentGoal: "great guideline suggestion",
     contacts: {
-        email: getAuthorContactHref("email", "your@email"),
-        github: getAuthorContactHref("github", "githubID"),
-        youtube: getAuthorContactHref("youtube", "youtubeID"),
-        facebook: getAuthorContactHref("facebook", "facebookID"),
-        instagram: getAuthorContactHref("instagram", "instagramID"),
-        linkedin: getAuthorContactHref("linkedin", "linkedinID"),
-        twitter: getAuthorContactHref("twitter", "twitterID"),
+        email: getAuthorContactHref("email", "danpa725@cau.ac.kr"),
+        github: getAuthorContactHref("github", "danpacho"),
+        youtube: "",
+        facebook: "",
+        instagram: "",
+        linkedin: "",
+        twitter: "",
     },
     logoImageUrl: "/logo.webp",
     bannerImageUrl: "/banner.png",
@@ -53,13 +53,14 @@ interface BlogInfoType {
     googleAnalyticsID?: string
 }
 const blogInfo: BlogInfoType = {
-    url: "your DEPLOY URL",
-    siteName: "your site name",
-    subtitle: "your site subtitle",
+    url: "https://next-your-home-guide.vercel.app",
+    siteName: "next your home guide",
+    subtitle: "follw this guideline",
     copyright: `${
         authorInfo.name
     }© All rights reserved ${new Date().getFullYear()}.`,
     language: "ko",
+    googleAnalyticsID: "G-RXF8YR06Z3",
 }
 
 const blogContentsDirectoryName = "blog" as const
