@@ -2,30 +2,25 @@ import styled from "styled-components"
 
 import { useCallback, useRef, useState } from "react"
 
-import { useTimeout } from "@hooks/index"
+import { useThemeMode, useTimeout } from "@hooks/index"
 
 import { CodeCopyButton } from "./Code/CodeCopyButton"
 import media from "@styles/utils/media"
+import { IsLight } from "@typing/theme"
 
 const CodeWrapper = styled.div`
     position: relative;
-    width: fit-content;
-    min-width: 50%;
-    max-width: 95%;
+    width: 100%;
 
-    margin: 2rem 0;
-
-    ${media.widePhone} {
-        min-width: 9rem;
-        max-width: 100%;
-    }
+    margin: 1rem 0;
 `
 
-const CodeParentContainer = styled.pre`
+const CodeParentContainer = styled.pre<IsLight>`
     overflow-x: auto;
     padding: 2rem 0 1rem 0;
 
-    border-radius: ${(p) => p.theme.bmd};
+    border-radius: ${(p) => p.theme.bsm};
+    background: ${(p) => (p.isLight ? "#192c3c" : "#011627")};
 `
 
 function Pre(props: any) {
@@ -44,6 +39,7 @@ function Pre(props: any) {
         setIsCodeCopyVisible(true)
     }, [])
 
+    const { isLight } = useThemeMode()
     return (
         <CodeWrapper
             ref={codeRef}
@@ -52,7 +48,7 @@ function Pre(props: any) {
             onMouseLeave={() => setIsHover(false)}
             onTouchEnd={() => setIsHover(false)}
         >
-            <CodeParentContainer {...props} />
+            <CodeParentContainer isLight={isLight} {...props} />
             {codeRef.current?.textContent && (
                 <CodeCopyButton
                     code={codeRef.current.textContent}
