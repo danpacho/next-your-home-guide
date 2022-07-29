@@ -78,7 +78,7 @@ interface ConfigType extends BlogInfoType {
 const config: ConfigType = {
     useTXT: false,
     useKatex: false,
-    useMemo: true,
+    useMemo: false,
     useMobileTOC: true,
     userPallete,
     blogContentsDirectoryName,
