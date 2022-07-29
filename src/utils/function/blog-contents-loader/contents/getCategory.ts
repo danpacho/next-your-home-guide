@@ -25,9 +25,9 @@ import { config } from "blog.config"
  */
 const getAllCategoryName = async () => {
     try {
-        return (await readdir(blogContentsDirectory, "utf-8")).filter(
-            (category) => category !== MAC_OS_FILE_EXCEPTION
-        )
+        return (await readdir(blogContentsDirectory, "utf-8"))
+            .filter((category) => category !== MAC_OS_FILE_EXCEPTION)
+            .filter((category) => category.trim())
     } catch (err) {
         throw new BlogErrorAdditionalInfo({
             passedError: err,
@@ -291,7 +291,7 @@ const readAllCategoryJSONFile = async (
                 const categoryInfo = {
                     description,
                     color: getValidateColor(color),
-                    emoji: emojiExec[0],
+                    emoji,
                     category,
                     categoryUrl: `/${category}`,
                 }
