@@ -18,9 +18,7 @@ const nextConfig = {
     compiler: {
         reactStrictMode: true,
         styledComponents: true,
-        removeConsole: {
-            exclude: ["error"],
-        },
+        removeConsole: false,
     },
     experimental: {
         nextScriptWorkers: true,
