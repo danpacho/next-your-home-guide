@@ -1,0 +1,299 @@
+---
+title: What is MDX component?
+preview: MDX components are useful for improving the post readability
+author: guider
+update: 2022/07/18
+color: "#20C997"
+tags: MDX, component
+---
+
+# What is MDX Atom?
+
+**MDX atom component** means a core rendering component of MDX
+
+Find out [MDX component](https://mdxjs.com/table-of-components/) on the official site
+
+> `src/components/MDXAtoms` contains all components
+
+---
+
+# Text
+
+## Basic handwriting
+
+1. How to use
+
+```md
+basic text
+```
+
+2. Results
+
+basic text
+
+---
+
+## Italic and bold
+
+1. How to use
+
+```md
+**bold text**
+_italic text_
+```
+
+2. Results
+
+**bold text**
+_italic text_
+
+---
+
+## Link
+
+1. How to use
+
+```md
+[link-text](link-url)
+```
+
+2. Results
+
+[link-text](link-url)
+
+---
+
+# Title
+
+1. How to use
+
+```md
+# Title 1
+
+## Title 2
+
+### Title 3
+```
+
+2. Components
+
+-   `H1`
+-   `H2`
+-   `H3`
+
+There is a disadvantage that the structure of the text becomes somewhat complicated if the title is deeply subdivided beyond `H3`
+
+3. `Table of content` component
+
+-   Only `H1` and `H2` are included
+-   For normal use of `TOC`, the text of the title must contain only pure text
+
+```md
+🚫 # _Head_ **is** `head`
+✅ # Head is head
+```
+
+---
+
+# List
+
+## Ordered List
+
+1. How to use
+
+```md
+1. I like apple
+2. I like banana
+3. I love myself
+```
+
+2. Results
+
+    1. I like apple
+    2. I like banana
+    3. I love myself
+
+---
+
+## Unordered List
+
+1. How to use
+
+```md
+-   typescript
+    1. concrete
+        - love it
+-   nextjs
+    -   awsome
+-   styled-components
+```
+
+2. Results
+
+-   typescript
+    1. concrete
+        - love it
+-   nextjs
+    -   awsome
+-   styled-components
+
+---
+
+# Quote
+
+## Varients
+
+1. `default`
+
+-   How to use it
+
+```md
+> Basic Quotes
+```
+
+-   Results
+
+> Basic Quotes
+
+2. `warning`
+
+-   How to use it
+
+```md
+> Warning quote: warning
+```
+
+-   Results
+
+> Warning quote: warning
+
+3. `question`
+
+-   How to use it
+
+```md
+> Quotes from question:
+```
+
+-   Results
+
+> Quotes from question:
+
+4. `note`
+
+-   How to use it
+
+```md
+> Note Quotes: note
+```
+
+-   Results
+
+> Note Quotes: note
+
+---
+
+# Code
+
+Code blocks are essential for dev blogs
+
+Next your home has practical and customizable code components
+
+## How to use inline code
+
+-   How to use it
+
+```md
+`inline code`
+```
+
+-   Results
+
+`inline code`
+
+## Usage - code block
+
+1. How to use
+
+````md
+```language
+language code
+```
+````
+
+````md
+```js {1,2-3} showLineNumbers
+const favorites = {
+    animal: "sea-otter 🦦",
+    fruits: ["🍎", "🍏", "🍓", "🍑", "🍍"],
+}
+```
+````
+
+Code Block Settings Options
+
+1. Language: `language` (required)
+2. Highlight: `{singleLineNumber, startLineNumber-endLineNumber}` (select)
+3. Number of lines: `showLineNumber` (select)
+
+Argument: `language` `{singleLineNumber, startLineNumber-endLineNumber}` `showLineNumber`
+
+2. Results
+
+```js
+const NAME = "NEXT_YOUR_HOME"
+```
+
+```js {1,2-3} showLineNumbers
+const favorites = {
+    animal: "sea-otter 🦦",
+    fruits: ["🍎", "🍏", "🍓", "🍑", "🍍"],
+}
+```
+
+---
+
+# Image
+
+-   Optimized with `next/image`
+-   Automatically resize photos
+
+## How to use it
+
+```md
+![alt-text](static/external)
+```
+
+---
+
+# Divider
+
+1. How to use
+
+```md
+---
+```
+
+2. Results
+
+---
+
+# Table
+
+1. How to use
+
+```md
+|             | rock     | scissors | paper    |
+| ----------- | -------- | -------- | -------- |
+| emoji       | 👊       | 🤞🏻       | ✋🏾       |
+| possibility | `33.33%` | `33.33%` | `33.33%` |
+```
+
+2. Results
+
+|             | rock     | scissors | paper    |
+| ----------- | -------- | -------- | -------- |
+| emoji       | 👊       | 🤞🏻       | ✋🏾       |
+| possibility | `33.33%` | `33.33%` | `33.33%` |
+
+Supported via [remark-gfm](https://github.com/remarkjs/remark-gfm)

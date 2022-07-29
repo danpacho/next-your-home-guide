@@ -1,0 +1,82 @@
+---
+title: Things that before deploying
+preview: Let's look at what needs to be done before deploy and apply it
+author: danpacho
+update: 2022/07/29
+color: "#3b5fa2"
+tags: deploy, setup
+---
+
+# Setup blog url
+
+1. `blog.config.ts`
+
+-   `blogInfo.url`: Change to url to deploy
+-   `blogInfo.Google AnalyticsID`: `GA` can be activated through issued ID
+-   an example
+
+```ts {2,3}
+const blogInfo: BlogInfoType = {
+    url: "https://next-your-home-guide.vercel.app",
+    googleAnalyticsID: "YOUR_GA_ID",
+    siteName: "next your home guide",
+    subtitle: "follw this guideline",
+    copyright: `${
+        authorInfo.name
+    }© }© All rights reserved ${new Date().getFullYear()}.`,
+    language: "ko",
+}
+```
+
+2. `public/robots.txt`
+
+-   Put the url to be distributed in the `Sitemap`
+-   an example
+
+```txt {3}
+User-agent: *
+Allow: /
+Sitemap: https://next-your-home-guide.vercel.app/sitemap.xml
+```
+
+3. Apply Google Analytics (optional)
+
+    1. Log in to [Google Analytics](https://analytics.google.com)
+    2. Create a new **Google Analytics 4** property
+    3. Enter the generated `Google Analytics ID` into `blogInfo.Google Analytics ID`
+
+---
+
+# Learn more about blog settings
+
+## Author Information
+
+> at `authorInfo`:note
+
+-   `name`: The author's nickname
+-   `currentState`: Lets you write down the current state
+-   `currentGoal`: Write down your current goals
+-   `Contacts`: Write down how you can contact the author
+    -   _**email, github, youtube, facebook, instagram, linkedin, twitter**_
+-   `logoImageUrl`: The author's logo path displayed in the profile
+-   `bannerImageUrl`: The path of the banner image to be displayed when shared externally
+-   `faviconUrl`: This is the favicon path
+
+## Blog Information
+
+> at `blogInfo`:note
+
+-   `siteName`: Blog Name
+-   `Subtitle`: A description of the blog
+-   `language`: Write down which languages you support
+
+## Number of blog posts
+
+> at `config`:note
+
+-   `postPerCategoryPage`: Adjusts the number of posts to be displayed on one page of the category
+-   `numberOfLatestPost`: Adjusts the latest number of posts
+
+---
+
+**Ready to deploy!**

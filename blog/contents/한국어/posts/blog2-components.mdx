@@ -1,0 +1,302 @@
+---
+title: MDX component 알아보기
+preview: MDX component의 구성을 알아보고 바꿔봅시다
+author: danpacho
+update: 2022/07/18
+color: "#20C997"
+tags: MDX, 컴포넌트
+series: 블로그-2
+---
+
+# MDX Atom이 뭔가요?
+
+**MDX atom component**란 MDX의 핵심 렌더링 구성 요소를 의미합니다
+
+공식사이트에서 [MDX component 구성요소](https://mdxjs.com/table-of-components/) 알아보기
+
+> `src/components/MDXAtoms`에 모든 component가 있습니다
+
+---
+
+# Text
+
+## 기본 글씨체
+
+1. 사용법
+
+```md
+basic text
+```
+
+2. 결과
+
+basic text
+
+---
+
+## italic과 bold체
+
+1. 사용법
+
+```md
+**bold text**
+_italic text_
+```
+
+2. 결과
+
+**bold text**
+_italic text_
+
+---
+
+## 링크
+
+1. 사용법
+
+```md
+[link-text](link-url)
+```
+
+2. 결과
+
+[link-text](link-url)
+
+---
+
+# 제목
+
+1. 사용법
+
+```md
+# 제목1
+
+## 제목2
+
+### 제목3
+```
+
+2. 컴포넌트
+
+-   `H1`
+-   `H2`
+-   `H3`
+
+`H3`이상으로 깊게 제목을 세분화 시키면 글의 구조가 다소 복잡해지는 단점이 존재합니다
+
+<br />
+
+3. `Table of content` 컴포넌트
+
+-   `H1`과 자식 `H2`만 포함합니다
+-   정상적인 `TOC` 이용을 위해, 제목의 글은 순수 텍스트만 포함 해야합니다
+
+```md
+🚫 # _Head_ **is** `head`
+✅ # Head is head
+```
+
+---
+
+# 목록
+
+## 열거형
+
+1. 사용법
+
+```md
+1. I like apple
+2. I like banana
+3. I love myself
+```
+
+2. 결과
+
+    1. I like apple
+    2. I like banana
+    3. I love myself
+
+---
+
+## 비열거형
+
+1.  사용법
+
+```md
+-   typescript
+    1. concrete
+        - love it
+-   nextjs
+    -   awsome
+-   styled-components
+```
+
+2.  결과
+
+-   typescript
+    1. concrete
+        - love it
+-   nextjs
+    -   awsome
+-   styled-components
+
+---
+
+# 인용문
+
+## 다양한 인용 type
+
+1. `default`
+
+-   사용법
+
+```md
+> 기본 인용문
+```
+
+-   결과
+
+> 기본 인용문
+
+2. `warning`
+
+-   사용법
+
+```md
+> 경고 인용문:warning
+```
+
+-   결과
+
+> 경고 인용문:warning
+
+3. `question`
+
+-   사용법
+
+```md
+> 질문 인용문:question
+```
+
+-   결과
+
+> 질문 인용문:question
+
+4. `note`
+
+-   사용법
+
+```md
+> 노트 인용문:note
+```
+
+-   결과
+
+> 노트 인용문:note
+
+---
+
+# 코드
+
+개발 블로그를 위해 코드블럭은 필수적입니다
+
+Next your home에서는 실용적이며 커스텀 가능한 코드 component를 갖추고 있습니다
+
+## inline code 사용법
+
+-   사용법
+
+```md
+`inline code`
+```
+
+-   결과
+
+`inline code`
+
+## 사용법 - code block
+
+1.  사용법
+
+````md
+```language
+language code
+```
+````
+
+````md
+```js {1,2-3} showLineNumbers
+const favorites = {
+    animal: "sea-otter 🦦",
+    fruits: ["🍎", "🍏", "🍓", "🍑", "🍍"],
+}
+```
+````
+
+코드 블럭 설정 옵션
+
+1. 언어: `language` ( 필수 )
+2. 강조할 줄: `{singleLineNumber, startLineNumber-endLineNumber}` ( 선택 )
+3. 줄 수: `showLineNumbers` ( 선택 )
+
+인수 제공: `language` `{singleLineNumber, startLineNumber-endLineNumber}` `showLineNumbers`
+
+2.  결과
+
+```js
+const NAME = "NEXT_YOUR_HOME"
+```
+
+```js {1,2-3} showLineNumbers
+const favorites = {
+    animal: "sea-otter 🦦",
+    fruits: ["🍎", "🍏", "🍓", "🍑", "🍍"],
+}
+```
+
+---
+
+# 사진
+
+-   `next/image`로 최적화 되어 있습니다
+-   자동적으로 사진 크기를 조정합니다
+
+## 사용법
+
+```md
+![alt-text](static/external)
+```
+
+---
+
+# 구분선
+
+1.  사용법
+
+```md
+---
+```
+
+2.  결과
+
+---
+
+# Table
+
+1.  사용법
+
+```md
+|             | rock     | scissors | paper    |
+| ----------- | -------- | -------- | -------- |
+| emoji       | 👊       | 🤞🏻       | ✋🏾       |
+| possibility | `33.33%` | `33.33%` | `33.33%` |
+```
+
+2.  결과
+
+|             | rock     | scissors | paper    |
+| ----------- | -------- | -------- | -------- |
+| emoji       | 👊       | 🤞🏻       | ✋🏾       |
+| possibility | `33.33%` | `33.33%` | `33.33%` |
+
+[remark-gfm](https://github.com/remarkjs/remark-gfm)을 통해 지원됩니다

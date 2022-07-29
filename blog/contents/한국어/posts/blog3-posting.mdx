@@ -1,0 +1,204 @@
+---
+title: 새로운 글 만들어보기
+preview: 글을 쉽게 만들고 활용해봅시다
+author: danpacho
+update: 2022/07/25
+color: "#20C997"
+tags: MDX, cli, 글
+series: 블로그-3
+---
+
+# 방법1: 터미널에 명령하기
+
+```bash
+pnpm post
+```
+
+1. 블로그 파일 이름 선택하기
+2. `기존 카테고리` vs `새로운 카테고리`
+
+    1. `기존 카테고리`
+        1. 기존 카테고리 중 1개 선택
+        2. 새로운 글 제목 입력
+    2. `새로운 카테고리`
+        1. 새로운 카테고리 제목 입력
+        2. 새로운 카테고리 설명 입력
+        3. 새로운 글 제목 입력
+    3. 결과
+
+```md
+---
+title: typed title
+preview: PREVIEW
+author: AUTHOR
+update: 2022/07/25
+color: "#716ffe"
+tags: TAG1, TAG2
+---
+
+# Post Title
+```
+
+---
+
+# 방법2: 스스로 시작하기
+
+## 반드시 포함해야 하는 meta 속성
+
+1. title: `string`
+2. preview: `string`
+3. author: `string`
+4. update: `string`
+    1. format: `YYYY/MM/DD`
+5. color: `string`
+    1. format: `“#HEX”` or `“rgba(r,g,b,a)”` or `“rgb(r,g,b)”`
+6. tags: `string`
+    1. format: `tag1, tag2, …`
+
+---
+
+## 선택가능한 meta 속성
+
+1. sereis: `string`
+    1. format: `seriesTitle-seriesNumber`
+    2. ex): js-1, will be first js series
+2. postpone: `boolean`
+    1. if `true`: post will not display
+3. reference: `string`
+    1. format: `ref_url1, ref_url2, ...`
+
+---
+
+# MDX의 힘 느껴보기 🔥
+
+## MDX에서 React component 사용해보기
+
+1. component 불러오기
+
+```jsx
+import { Head } from "@components/BlogOnly/Head"
+;<Head title={"This is Next your home"} />
+```
+
+    `@components/...`와 같은 절대 경로도 지원합니다!
+
+2. 예시 componenet
+
+```tsx
+const Head = ({ title }: { title: string }) => {
+    return (
+        <>
+            <header className="head">{title}</header>
+
+            <style jsx>
+                {`
+                    .head {
+                        font-size: 1.25rem;
+                        text-align: center;
+                        font-weight: 700;
+                    }
+                `}
+            </style>
+        </>
+    )
+}
+export default Head
+```
+
+-   불러오는 component는 외부 라이브러리 없이 순수해야합니다
+    -   react hook을 사용할 수 있습니다. 즉 statefull component를 제작할 수 있습니다
+-   **절대로** 스타일링을 위해 `nextJs`에 내장된 `styled-jsx`를 제외한 다른 `css-in-js` 라이브러리를 사용하지 마세요
+    -   `styled-jsx`에 대해 [더 알아보기](https://nextjs.org/blog/styling-next-with-styled-jsx)
+-   `jotai` 전역 상태는 공유되지 않습니다
+
+---
+
+## 게임 한판 해볼까요?
+
+import { Game } from "@components/PostOnly"
+
+<Game />
+
+---
+
+## MDX에서 javascript expression 사용해보기
+
+1.  `export const some = some_value`
+
+    1. 변수 선언
+
+    ```js
+    export const message = "HI!"
+    ```
+
+    2. 변수 사용
+
+    ```md
+    {message}
+    ```
+
+2.  `IIFE`
+
+    1. MDX안에서 `IIFE` 선언하기
+
+    ```md
+    {(() => {
+    const rand = Math.floor(Math.random() / 0.1)
+    return <span style={{color: "white", border: "1px solid white", padding: "0.25rem", borderRadius: "0.1rem"}}>{rand}</span>
+    })()}
+    ```
+
+    2. 결과
+
+    {(() => {
+    const rand = Math.floor(Math.random() / 0.1)
+    return <span style={{color: "white", border: "1px solid white", padding: "0.25rem", borderRadius: "0.1rem"}}>{rand}</span>
+    })()}
+
+3.  `Local React Component`
+
+    1. component 선언하기
+
+    ```jsx
+    export const LocalTitle = ({ text }) => (
+        <span
+            style={{
+                color: "white",
+                fontWeight: 700,
+                padding: "1rem",
+                backgroundColor: "tomato",
+                borderRadius: "2.5px",
+            }}
+        >
+            {text}
+        </span>
+    )
+    ```
+
+    2. MDX안에서 선언한 컴포넌트 사용하기
+
+    ```md
+    <LocalTitle text={"Local Title"} />
+    ```
+
+    3. 결과
+
+export const LocalTitle = ({ text }) => (
+    <span
+        style={{
+            color: "white",
+            fontWeight: 700,
+            padding: "1rem",
+            backgroundColor: "tomato",
+            borderRadius: "2.5px",
+        }}
+    >
+        {text}
+    </span>
+)
+
+<LocalTitle text={"Local Title"} />
+
+# MDX 공식 사이트 방문해보기
+
+[expression, 여기 눌러서 알아보기 🔎](https://mdxjs.com/docs/what-is-mdx/#expressions)

@@ -1,0 +1,81 @@
+---
+title: 배포 이전에 해야할 일
+preview: 배포 이전에 해야할 일을 살펴보고 적용해봅시다
+author: danpacho
+update: 2022/07/29
+color: "#3b5fa2"
+tags: deploy, setup
+series: 배포-1
+---
+
+# 블로그 url 설정하기
+
+1.  `blog.config.ts`
+
+    -   `blogInfo.url`: 배포할 url로 변경합시다
+    -   `blogInfo.googleAnalyticsID`: 발급받은 ID를 통해 `GA`를 활성화 할 수 있습니다
+    -   예시
+        ```ts {2,3}
+        const blogInfo: BlogInfoType = {
+            url: "https://next-your-home-guide.vercel.app",
+            googleAnalyticsID: "YOUR_GA_ID",
+            siteName: "next your home guide",
+            subtitle: "follw this guideline",
+            copyright: `${
+                authorInfo.name
+            }© All rights reserved ${new Date().getFullYear()}.`,
+            language: "ko",
+        }
+        ```
+
+2.  `public/robots.txt`
+
+    -   `Sitemap`에 배포할 url을 넣어줍니다
+    -   예시
+        ```txt {3}
+        User-agent: *
+        Allow: /
+        Sitemap: https://next-your-home-guide.vercel.app/sitemap.xml
+        ```
+
+3.  Google Analytics 적용해보기 (선택적)
+    1. [Google Analytics](https://analytics.google.com)에 접속한 후 로그인
+    2. 새로운 **Google Analytics 4** 속성 생성
+    3. 생성된 `Google Analytics ID`를 `blogInfo.googleAnalyticsID`에 입력
+
+---
+
+# 이외 블로그 설정 알아보기
+
+## 작가 정보
+
+> at `authorInfo`:note
+
+-   `name`: 작가의 별칭입니다
+-   `currentState`: 현재 상태를 적을 수 있습니다
+-   `currentGoal`: 현재 가진 목표를 적을 수 있습니다
+-   `contacts`: 작가와 연락할 방법을 적을 수 있습니다
+    -   _**email, github, youtube, facebook, instagram, linkedin, twitter**_
+-   **image**: [정적 이미지](https://nextjs.org/docs/basic-features/static-file-serving)는 반드시 `public` 폴더에 위치시켜야 합니다
+    -   `logoImageUrl`: 프로필에 표시되는 작가의 로고 경로입니다
+    -   `bannerImageUrl`: 외부에 공유시 보여줄 배너 이미지 경로입니다
+    -   `faviconUrl`: favicon 경로입니다
+
+## 블로그 정보
+
+> at `blogInfo`:note
+
+-   `siteName`: 블로그 이름입니다
+-   `subtitle`: 블로그에 대한 설명입니다
+-   `language`: 어떤 언어를 지원하는지 적습니다
+
+## 블로그 글 갯수 조정
+
+> at `config`:note
+
+-   `postPerCategoryPage`: 카테고리 한 페이지에 표시될 글 갯수를 조정합니다
+-   `numberOfLatestPost`: 최신 글 갯수를 조정합니다
+
+---
+
+**배포 준비는 마쳤습니다!**

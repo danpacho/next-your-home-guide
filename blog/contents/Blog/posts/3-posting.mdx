@@ -1,0 +1,203 @@
+---
+title: How to post?
+preview: easy posting with built in CLI tool
+author: guider
+update: 2022/07/25
+color: "#20C997"
+tags: cli, posting
+---
+
+# Method1: Run scripts in the terminal
+
+```bash
+pnpm post
+```
+
+1. slect blog directory
+2. `category` vs `new category`
+
+    1. `category`
+        1. slect exsisting category
+        2. type new post title
+    2. `new category`
+        1. type new category title
+        2. type new category’s description
+        3. type new post title
+    3. results
+
+```md
+---
+title: typed title
+preview: PREVIEW
+author: AUTHOR
+update: 2022/07/25
+color: "#716ffe"
+tags: TAG1, TAG2
+---
+
+# Post Title
+```
+
+---
+
+# Method2: by yourself
+
+## Should include meta property
+
+1. title: `string`
+2. preview: `string`
+3. author: `string`
+4. update: `string`
+    1. format: `YYYY/MM/DD`
+5. color: `string`
+    1. format: `“#HEX”` or `“rgba(r,g,b,a)”` or `“rgb(r,g,b)”`
+6. tags: `string`
+    1. format: `tag1, tag2, …`
+
+---
+
+## Slectable meta property
+
+1. sereis: `string`
+    1. format: `seriesTitle-seriesNumber`
+    2. ex): js-1, will be first js series
+2. postpone: `boolean`
+    1. if `true`: post will not display
+3. reference: `string`
+    1. format: `ref_url1, ref_url2, ...`
+
+---
+
+# More power with MDX 🔥
+
+## MDX with React component
+
+1. Import component
+
+```jsx
+import { Head } from "@components/BlogOnly/Head"
+;<Head title={"This is Next your home"} />
+```
+
+    import path support absoulte path like `@components/...`
+
+2. Example component
+
+```tsx
+const Head = ({ title }: { title: string }) => {
+    return (
+        <>
+            <header className="head">{title}</header>
+
+            <style jsx>
+                {`
+                    .head {
+                        font-size: 1.25rem;
+                        text-align: center;
+                        font-weight: 700;
+                    }
+                `}
+            </style>
+        </>
+    )
+}
+export default Head
+```
+
+-   component should be pure
+    -   react hook, means stateful component
+-   **Do not use** the `css-in-js` library for styling other than `styled-jsx` built in `nextJs`
+    -   [more info](https://nextjs.org/blog/styling-next-with-styled-jsx) about `styled-jsx`
+-   `jotai` global state is not shared
+
+---
+
+## Have fun with Game Component
+
+import { Game } from "@components/PostOnly"
+
+<Game />
+
+---
+
+## MDX with javascript expression
+
+1.  `export const some = some_value`
+
+    1. declare variable
+
+    ```js
+    export const message = "HI!"
+    ```
+
+    2. use variable
+
+    ```md
+    {message}
+    ```
+
+2.  `IIFE`
+
+    1. declare `IIFE` inside of MDX
+
+    ```md
+    {(() => {
+    const rand = Math.floor(Math.random() / 0.1)
+    return <span style={{color: "white", border: "1px solid white", padding: "0.25rem", borderRadius: "0.1rem"}}>{rand}</span>
+    })()}
+    ```
+
+    2. results
+
+    {(() => {
+    const rand = Math.floor(Math.random() / 0.1)
+    return <span style={{color: "white", border: "1px solid white", padding: "0.25rem", borderRadius: "0.1rem"}}>{rand}</span>
+    })()}
+
+3.  `Local React Component`
+
+    1. declare component
+
+    ```jsx
+    export const LocalTitle = ({ text }) => (
+        <span
+            style={{
+                color: "white",
+                fontWeight: 700,
+                padding: "1rem",
+                backgroundColor: "tomato",
+                borderRadius: "2.5px",
+            }}
+        >
+            {text}
+        </span>
+    )
+    ```
+
+    2. using inside of mdx file
+
+    ```md
+    <LocalTitle text={"Local Title"} />
+    ```
+
+    3. results
+
+export const LocalTitle = ({ text }) => (
+    <span
+        style={{
+            color: "white",
+            fontWeight: 700,
+            padding: "1rem",
+            backgroundColor: "tomato",
+            borderRadius: "2.5px",
+        }}
+    >
+        {text}
+    </span>
+)
+
+<LocalTitle text={"Local Title"} />
+
+# Visit MDX official docs
+
+[about expression, click here 🔎](https://mdxjs.com/docs/what-is-mdx/#expressions)
