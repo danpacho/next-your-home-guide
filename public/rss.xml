@@ -1,0 +1,105 @@
+
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>next your home guide</title>
+    <link>https://next-your-home-guide.vercel.app</link>
+    <description>follw this guideline</description>
+    <language>ko</language>
+    <lastBuildDate>Mon, 25 Jul 2022 00:00:00 GMT</lastBuildDate>
+    <webMaster>danpa725@cau.ac.kr (danpacho)</webMaster>
+    <managingEditor>danpa725@cau.ac.kr (danpacho)</managingEditor>
+    <atom:link href="https://next-your-home-guide.vercel.app/rss.xml" rel="self" type="application/rss+xml"/>
+
+    <item>
+      <guid>https://next-your-home-guide.vercel.app/Blog/1/3-posting</guid>
+      <title>How to post?</title>
+      <link>https://next-your-home-guide.vercel.app/Blog/1/3-posting</link>
+      <description>easy posting with built in CLI tool</description>
+      <pubDate>Mon, 25 Jul 2022 00:00:00 GMT</pubDate>
+      <author>danpa725@cau.ac.kr (guider)</author>
+      <category>cli</category><category>posting</category>
+    </item>
+    <item>
+      <guid>https://next-your-home-guide.vercel.app/Blog/1/2-components</guid>
+      <title>What is MDX component?</title>
+      <link>https://next-your-home-guide.vercel.app/Blog/1/2-components</link>
+      <description>MDX components are useful for improving the post readability</description>
+      <pubDate>Mon, 18 Jul 2022 00:00:00 GMT</pubDate>
+      <author>danpa725@cau.ac.kr (guider)</author>
+      <category>MDX</category><category>component</category>
+    </item>
+    <item>
+      <guid>https://next-your-home-guide.vercel.app/Blog/1/1-intro</guid>
+      <title>Next Your Home</title>
+      <link>https://next-your-home-guide.vercel.app/Blog/1/1-intro</link>
+      <description>Welcome to next your home guide! This is demo version of README.md</description>
+      <pubDate>Sun, 17 Jul 2022 00:00:00 GMT</pubDate>
+      <author>danpa725@cau.ac.kr (danpacho)</author>
+      <category>blog</category><category>nextjs</category>
+    </item>
+    <item>
+      <guid>https://next-your-home-guide.vercel.app/Deploy/1/1-setup</guid>
+      <title>Things that before deploying</title>
+      <link>https://next-your-home-guide.vercel.app/Deploy/1/1-setup</link>
+      <description>Let's look at what needs to be done before deploy and apply it</description>
+      <pubDate>Fri, 29 Jul 2022 00:00:00 GMT</pubDate>
+      <author>danpa725@cau.ac.kr (danpacho)</author>
+      <category>deploy</category><category>setup</category>
+    </item>
+    <item>
+      <guid>https://next-your-home-guide.vercel.app/Deploy/1/2-vercel</guid>
+      <title>Deploy via vercel</title>
+      <link>https://next-your-home-guide.vercel.app/Deploy/1/2-vercel</link>
+      <description>deploy your blog! You alomost there 😎</description>
+      <pubDate>Fri, 29 Jul 2022 00:00:00 GMT</pubDate>
+      <author>danpa725@cau.ac.kr (danpacho)</author>
+      <category>vercel</category><category>deploy</category>
+    </item>
+    <item>
+      <guid>https://next-your-home-guide.vercel.app/한국어/1/deploy1-setup</guid>
+      <title>배포 이전에 해야할 일</title>
+      <link>https://next-your-home-guide.vercel.app/한국어/1/deploy1-setup</link>
+      <description>배포 이전에 해야할 일을 살펴보고 적용해봅시다</description>
+      <pubDate>Fri, 29 Jul 2022 00:00:00 GMT</pubDate>
+      <author>danpa725@cau.ac.kr (danpacho)</author>
+      <category>deploy</category><category>setup</category>
+    </item>
+    <item>
+      <guid>https://next-your-home-guide.vercel.app/한국어/1/deploy2-vercel</guid>
+      <title>vercel과 쉬운 배포</title>
+      <link>https://next-your-home-guide.vercel.app/한국어/1/deploy2-vercel</link>
+      <description>vercel과 함께라면 쉽고 빠르게 nextjs 앱을 배포할 수 있습니다! 시작해볼까요?</description>
+      <pubDate>Fri, 29 Jul 2022 00:00:00 GMT</pubDate>
+      <author>danpa725@cau.ac.kr (danpacho)</author>
+      <category>vercel</category><category>deploy</category>
+    </item>
+    <item>
+      <guid>https://next-your-home-guide.vercel.app/한국어/1/blog1-intro</guid>
+      <title>Next your home</title>
+      <link>https://next-your-home-guide.vercel.app/한국어/1/blog1-intro</link>
+      <description>가이드를 보러 오신 여러분 환영합니다! 본 글은 깃허브 리드미의 데모 버전입니다</description>
+      <pubDate>Tue, 26 Jul 2022 00:00:00 GMT</pubDate>
+      <author>danpa725@cau.ac.kr (danpacho)</author>
+      <category>블로그</category><category>nextjs</category>
+    </item>
+    <item>
+      <guid>https://next-your-home-guide.vercel.app/한국어/1/blog3-posting</guid>
+      <title>새로운 글 만들어보기</title>
+      <link>https://next-your-home-guide.vercel.app/한국어/1/blog3-posting</link>
+      <description>글을 쉽게 만들고 활용해봅시다</description>
+      <pubDate>Mon, 25 Jul 2022 00:00:00 GMT</pubDate>
+      <author>danpa725@cau.ac.kr (danpacho)</author>
+      <category>MDX</category><category>cli</category><category>글</category>
+    </item>
+    <item>
+      <guid>https://next-your-home-guide.vercel.app/한국어/2/blog2-components</guid>
+      <title>MDX component 알아보기</title>
+      <link>https://next-your-home-guide.vercel.app/한국어/2/blog2-components</link>
+      <description>MDX component의 구성을 알아보고 바꿔봅시다</description>
+      <pubDate>Mon, 18 Jul 2022 00:00:00 GMT</pubDate>
+      <author>danpa725@cau.ac.kr (danpacho)</author>
+      <category>MDX</category><category>컴포넌트</category>
+    </item>
+    
+  </channel>
+</rss>
