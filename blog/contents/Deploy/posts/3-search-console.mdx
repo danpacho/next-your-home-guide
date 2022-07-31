@@ -1,0 +1,65 @@
+---
+title: Adding blog to Google Search Console
+preview: Now let's make a blog that the search engine can discover!
+author: danpacho
+update: 2022/08/01
+color: "#7489b9"
+tags: deploy, search engine
+---
+
+# Select a property type
+
+1. [Access Site](https://search.google.com/search-console/welcome)
+
+2. Select **URL Prefix** method
+
+3. Enter the deploy URL
+
+4. Click `Continue`
+
+![Select property type](/Deploy/search/1.png)
+
+# Site ownership verification
+
+1. Select `HTML` method
+
+2. Download the presented html file
+
+![Download method](/Deploy/search/2.png)
+
+3. Save the file into the `public` folder
+
+4. Update to Github repository
+
+-   `push` files stored in `public` folder in Github repository
+-   Redeploying will proceed automatically by vercel
+
+# Verify ownership with saved HTML file
+
+When you return to the Google Search Console and proceed, you will receive a confirmation message
+
+Then click properties
+
+# Register Sitemap
+
+1. Click `Sitemaps` in the left area
+
+![Click sitemaps](/Deploy/search/3.png)
+
+2. Enter `sitemap.xml` in the Add New Site Map input box
+
+> Why do you type `sitemap.xml`?:question
+
+Because it creates static `sitemap.xml` file in the [public folder](https://nextjs.org/docs/basic-features/static-file-serving)
+
+![Register sitemap](/Deploy/search/4.png)
+
+3. Check the status of the sitemap successfully submitted
+
+Status: `Success`
+
+![Sitemap registration](/Deploy/search/5.png)
+
+# Congratulations 🥳!
+
+Blog successfully registered in **Google Search Console**

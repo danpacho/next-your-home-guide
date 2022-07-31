@@ -2,67 +2,119 @@
 title: 검색엔진에 블로그 등록
 preview: 이제 만들어진 블로그를 검색 엔진이 발견할 수 있도록 만들어봅시다!
 author: danpacho
-update: 2022/07/31
+update: 2022/07/29
 color: "#7489b9"
 tags: deploy, 검색엔진
+series: 배포-3
 ---
 
 # Google Search Console
 
-## 속성 유형 선택하기
+## 속성 유형 선택
 
-1. **URL 접두어** 방식을 선택합니다
+1. [사이트 접속하기](https://search.google.com/search-console/welcome)
 
-2. 배포 URL을 입력합니다
+2. **URL 접두어** 방식을 선택합니다
 
-3. `계속`을 클릭합니다
+3. 배포 URL을 입력합니다
+
+4. `계속`을 클릭합니다
 
 ![속성 유형 선택](/Deploy/search/1.png)
 
-## 웹사이트 소유권 확인
+## 사이트 소유권 확인
 
-1. `HTML` tag 방식을 선택합니다
+1. `HTML` 방식을 선택합니다
 
-2. 제시된 `meta` tag를 복사합니다
+2. 제시된 파일을 다운로드 합니다
 
-tag는 다음과 같은 형식입니다
+![다운로드 방식](/Deploy/search/2.png)
 
-```HTML
-{/* Google Search Console Verification */}
-<meta
-    name="google-site-verification"
-    content="VERIFICATION_KEY""
-/>
-```
+3. `public`폴더에 해당 파일을 옮겨줍니다
 
-2. `src/componenets/Next/SEO/BaseSEO.tsx`에 복사된 내용을 넣어봅시다
+4. 원격 저장소에 업데이트하기
 
-예시를 확인해보세요
-
-```tsx
-import { config } from "blog.config"
-
-function BaseSEO() {
-    return (
-        <>
-            {/* ... */}
-
-            {/* Google Search Console Verification */}
-            <meta name="google-site-verification" content="VERIFICATION_KEY" />
-
-            {/* ... */}
-        </>
-    )
-}
-
-export { BaseSEO }
-```
-
-3. 변경된 `BaseSEO`컴포넌트 원격저장소에 `push`하기
-
--   자신의 원격 저장소에 변경된 내용을 `push`합니다
+-   원격 저장소에 `public`폴더에 저장한 파일을 `push`합니다
 -   자동으로 재배포가 진행됩니다
 
-## Sitemap 등록하기
+## 저장된 파일로 소유권 확인
 
-# Naver Search Console
+Google Search Console로 돌아온 후 진행하면, 확인 완료 매세지를 받습니다
+
+이후 속성으로 이동을 클릭합니다
+
+## Sitemap 등록
+
+1. 왼쪽 색인의 `Sitemaps`를 클릭합니다
+
+![sitemaps 클릭](/Deploy/search/3.png)
+
+2. 새 사이트맵 추가란에 `sitemap.xml`을 입력합니다
+
+> 왜 `sitemap.xml`을 입력하나요?:question
+
+[public 폴더](https://nextjs.org/docs/basic-features/static-file-serving)에 `sitemap.xml`을 생성하기 때문입니다
+
+![sitemap 등록하기](/Deploy/search/4.png)
+
+3. 사이트맵이 성공적으로 제출되었는지 상태를 확인합니다
+
+상태: `성공`
+
+![sitemap 등록](/Deploy/search/5.png)
+
+## 구글, 축하드립니다 🥳!
+
+블로그가 **Google Search Console**에 정상적으로 등록되었습니다
+
+---
+
+# Naver Search Advisor
+
+[Naver Search Advisor](https://searchadvisor.naver.com/console/board)에 접속합니다
+
+## 사이트 등록
+
+블로그 url을 입력합니다
+
+![블로그 url](/Deploy/search/6.png)
+
+## 사이트 소유권 확인 2
+
+1. `HTML` 파일 업로드 방식을 선택합니다
+
+![다운로드 방식](/Deploy/search/7.png)
+
+2. `HTML 확인 파일`을 클릭하여 파일을 다운로드 합니다
+
+3. 이후 **Google Search Console**과 동일한 방식으로 진행합니다
+
+## 저장된 파일로 소유권 확인 2
+
+재배포 후 `소유 확인` 버튼을 클릭합니다
+
+확인 완료 매세지를 확인합니다
+
+## Sitemap 등록 2
+
+1. 왼쪽 요청의 `사이트맵 제출`을 클릭합니다
+
+2. 새 사이트맵 추가란에 `sitemap.xml`을 입력합니다
+
+![사이트맵 제출 클릭](/Deploy/search/9.png)
+
+3. `확인`을 클릭하고 사이트맵이 성공적으로 제출되었는지 확인합니다
+
+## RSS 등록
+
+1. 왼쪽 요청의 `RSS 제출`을 클릭합니다
+
+2. 새 RSS 추가란에 `rss.xml`을 입력합니다
+
+![RSS 제출 클릭](/Deploy/search/10.png)
+
+3. `확인`을 클릭하고 RSS가 성공적으로 제출되었는지 확인합니다
+
+## 네이버, 축하드립니다 🥳!
+
+블로그가 **Naver Search Advisor**에 정상적으로 등록되었습니다
