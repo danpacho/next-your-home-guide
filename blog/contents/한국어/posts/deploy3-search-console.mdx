@@ -1,0 +1,68 @@
+---
+title: 검색엔진에 블로그 등록
+preview: 이제 만들어진 블로그를 검색 엔진이 발견할 수 있도록 만들어봅시다!
+author: danpacho
+update: 2022/07/31
+color: "#7489b9"
+tags: deploy, 검색엔진
+---
+
+# Google Search Console
+
+## 속성 유형 선택하기
+
+1. **URL 접두어** 방식을 선택합니다
+
+2. 배포 URL을 입력합니다
+
+3. `계속`을 클릭합니다
+
+![속성 유형 선택](/Deploy/search/1.png)
+
+## 웹사이트 소유권 확인
+
+1. `HTML` tag 방식을 선택합니다
+
+2. 제시된 `meta` tag를 복사합니다
+
+tag는 다음과 같은 형식입니다
+
+```HTML
+{/* Google Search Console Verification */}
+<meta
+    name="google-site-verification"
+    content="VERIFICATION_KEY""
+/>
+```
+
+2. `src/componenets/Next/SEO/BaseSEO.tsx`에 복사된 내용을 넣어봅시다
+
+예시를 확인해보세요
+
+```tsx
+import { config } from "blog.config"
+
+function BaseSEO() {
+    return (
+        <>
+            {/* ... */}
+
+            {/* Google Search Console Verification */}
+            <meta name="google-site-verification" content="VERIFICATION_KEY" />
+
+            {/* ... */}
+        </>
+    )
+}
+
+export { BaseSEO }
+```
+
+3. 변경된 `BaseSEO`컴포넌트 원격저장소에 `push`하기
+
+-   자신의 원격 저장소에 변경된 내용을 `push`합니다
+-   자동으로 재배포가 진행됩니다
+
+## Sitemap 등록하기
+
+# Naver Search Console

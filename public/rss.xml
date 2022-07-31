@@ -56,6 +56,15 @@
       <category>vercel</category><category>deploy</category>
     </item>
     <item>
+      <guid>https://next-your-home-guide.vercel.app/한국어/1/deploy3-search-console</guid>
+      <title>검색엔진에 블로그 등록</title>
+      <link>https://next-your-home-guide.vercel.app/한국어/1/deploy3-search-console</link>
+      <description>이제 만들어진 블로그를 검색 엔진이 발견할 수 있도록 만들어봅시다!</description>
+      <pubDate>Sun, 31 Jul 2022 00:00:00 GMT</pubDate>
+      <author>danpa725@cau.ac.kr (danpacho)</author>
+      <category>deploy</category><category>검색엔진</category>
+    </item>
+    <item>
       <guid>https://next-your-home-guide.vercel.app/한국어/1/deploy1-setup</guid>
       <title>배포 이전에 해야할 일</title>
       <link>https://next-your-home-guide.vercel.app/한국어/1/deploy1-setup</link>
@@ -83,9 +92,9 @@
       <category>블로그</category><category>nextjs</category>
     </item>
     <item>
-      <guid>https://next-your-home-guide.vercel.app/한국어/1/blog3-posting</guid>
+      <guid>https://next-your-home-guide.vercel.app/한국어/2/blog3-posting</guid>
       <title>새로운 글 만들어보기</title>
-      <link>https://next-your-home-guide.vercel.app/한국어/1/blog3-posting</link>
+      <link>https://next-your-home-guide.vercel.app/한국어/2/blog3-posting</link>
       <description>글을 쉽게 만들고 활용해봅시다</description>
       <pubDate>Mon, 25 Jul 2022 00:00:00 GMT</pubDate>
       <author>danpa725@cau.ac.kr (danpacho)</author>

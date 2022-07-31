@@ -3,7 +3,7 @@ title: What is MDX component?
 preview: MDX components are useful for improving the post readability
 author: guider
 update: 2022/07/18
-color: "#20C997"
+color: "#059669"
 tags: MDX, component
 ---
 
@@ -39,13 +39,19 @@ basic text
 
 ```md
 **bold text**
+
 _italic text_
+
+_**bold_italic text**_
 ```
 
 2. Results
 
 **bold text**
+
 _italic text_
+
+_**bold_italic text**_
 
 ---
 
@@ -141,55 +147,33 @@ There is a disadvantage that the structure of the text becomes somewhat complica
 
 # Quote
 
-## Varients
-
-1. `default`
-
--   How to use it
+1. How to use
 
 ```md
 > Basic Quotes
 ```
 
--   Results
+```md
+> Warning quote:warning
+```
+
+```md
+> Question quote:question
+```
+
+```md
+> Note Quotes:note
+```
+
+2. Results
 
 > Basic Quotes
 
-2. `warning`
+> Warning quote:warning
 
--   How to use it
+> Question quote:question
 
-```md
-> Warning quote: warning
-```
-
--   Results
-
-> Warning quote: warning
-
-3. `question`
-
--   How to use it
-
-```md
-> Quotes from question:
-```
-
--   Results
-
-> Quotes from question:
-
-4. `note`
-
--   How to use it
-
-```md
-> Note Quotes: note
-```
-
--   Results
-
-> Note Quotes: note
+> Note Quotes:note
 
 ---
 
@@ -201,17 +185,17 @@ Next your home has practical and customizable code components
 
 ## How to use inline code
 
--   How to use it
+1.  How to use
 
 ```md
 `inline code`
 ```
 
--   Results
+2.  Results
 
 `inline code`
 
-## Usage - code block
+## How to use code block
 
 1. How to use
 
@@ -220,6 +204,14 @@ Next your home has practical and customizable code components
 language code
 ```
 ````
+
+2. Code Block Settings Options
+
+    - Language ( _required_ ): `language`
+    - Highlight ( _optional_ ): `{singleLineNumber, startLineNumber-endLineNumber}`
+    - Number of lines ( _optional_ ): `showLineNumber`
+
+Argument: `language {lineNumber} showLineNumbers`
 
 ````md
 ```js {1,2-3} showLineNumbers
@@ -230,19 +222,7 @@ const favorites = {
 ```
 ````
 
-Code Block Settings Options
-
-1. Language: `language` (required)
-2. Highlight: `{singleLineNumber, startLineNumber-endLineNumber}` (select)
-3. Number of lines: `showLineNumber` (select)
-
-Argument: `language` `{singleLineNumber, startLineNumber-endLineNumber}` `showLineNumber`
-
-2. Results
-
-```js
-const NAME = "NEXT_YOUR_HOME"
-```
+3. Results
 
 ```js {1,2-3} showLineNumbers
 const favorites = {
@@ -256,7 +236,7 @@ const favorites = {
 # Image
 
 -   Optimized with `next/image`
--   Automatically resize photos
+-   Automatically fit the image size
 
 ## How to use it
 

@@ -3,7 +3,7 @@ title: MDX component 알아보기
 preview: MDX component의 구성을 알아보고 바꿔봅시다
 author: danpacho
 update: 2022/07/18
-color: "#20C997"
+color: "#059669"
 tags: MDX, 컴포넌트
 series: 블로그-2
 ---
@@ -18,19 +18,23 @@ series: 블로그-2
 
 ---
 
-# Text
+# 글자
 
 ## 기본 글씨체
 
 1. 사용법
 
 ```md
-basic text
+기본 글자를 적어봅니다.
+
+문단 나누기는 1번 띄어쓰기를 해주세요!
 ```
 
 2. 결과
 
-basic text
+기본 글자를 적어봅니다.
+
+문단 나누기는 1번 띄어쓰기를 해주세요!
 
 ---
 
@@ -40,13 +44,19 @@ basic text
 
 ```md
 **bold text**
+
 _italic text_
+
+_**bold_italic text**_
 ```
 
 2. 결과
 
 **bold text**
+
 _italic text_
+
+_**bold_italic text**_
 
 ---
 
@@ -55,12 +65,12 @@ _italic text_
 1. 사용법
 
 ```md
-[link-text](link-url)
+[테스트 링크 ✅](link-url)
 ```
 
 2. 결과
 
-[link-text](link-url)
+[테스트 링크 ✅](link-url)
 
 ---
 
@@ -144,53 +154,31 @@ _italic text_
 
 # 인용문
 
-## 다양한 인용 type
-
-1. `default`
-
--   사용법
+1. 사용법
 
 ```md
 > 기본 인용문
 ```
 
--   결과
-
-> 기본 인용문
-
-2. `warning`
-
--   사용법
-
 ```md
 > 경고 인용문:warning
 ```
 
--   결과
-
-> 경고 인용문:warning
-
-3. `question`
-
--   사용법
-
 ```md
 > 질문 인용문:question
 ```
-
--   결과
-
-> 질문 인용문:question
-
-4. `note`
-
--   사용법
 
 ```md
 > 노트 인용문:note
 ```
 
--   결과
+2. 결과
+
+> 기본 인용문
+
+> 경고 인용문:warning
+
+> 질문 인용문:question
 
 > 노트 인용문:note
 
@@ -214,7 +202,7 @@ Next your home에서는 실용적이며 커스텀 가능한 코드 component를 
 
 `inline code`
 
-## 사용법 - code block
+## code block 사용법
 
 1.  사용법
 
@@ -223,6 +211,14 @@ Next your home에서는 실용적이며 커스텀 가능한 코드 component를 
 language code
 ```
 ````
+
+2. 코드 블럭 설정 옵션
+
+    - 언어 ( _required_ ): `language`
+    - 강조 ( _optional_ ): `{singleLineNumber, startLineNumber-endLineNumber}`
+    - 줄 수 ( _optional_ ): `showLineNumber`
+
+인수 제공: `language {lineNumber} showLineNumbers`
 
 ````md
 ```js {1,2-3} showLineNumbers
@@ -233,19 +229,7 @@ const favorites = {
 ```
 ````
 
-코드 블럭 설정 옵션
-
-1. 언어: `language` ( 필수 )
-2. 강조할 줄: `{singleLineNumber, startLineNumber-endLineNumber}` ( 선택 )
-3. 줄 수: `showLineNumbers` ( 선택 )
-
-인수 제공: `language` `{singleLineNumber, startLineNumber-endLineNumber}` `showLineNumbers`
-
-2.  결과
-
-```js
-const NAME = "NEXT_YOUR_HOME"
-```
+3.  결과
 
 ```js {1,2-3} showLineNumbers
 const favorites = {

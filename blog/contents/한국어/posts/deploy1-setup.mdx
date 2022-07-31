@@ -3,10 +3,25 @@ title: 배포 이전에 해야할 일
 preview: 배포 이전에 해야할 일을 살펴보고 적용해봅시다
 author: danpacho
 update: 2022/07/29
-color: "#3b5fa2"
+color: "#7489c4"
 tags: deploy, setup
 series: 배포-1
 ---
+
+# 블로그 빌드 테스트하기
+
+빌드에 문제가 없는지 확인하고 `sitemap`과 `rss`를 생성합시다
+
+```bash
+pnpm build
+```
+
+1. `.next`폴더에 블로그 빌드 결과물 생성
+2. `public`폴더에 `rss.xml`, `sitemap.xml`생성
+
+# 원격저장소로 push하기
+
+모든 결과물을 각자만의 원격 저장소로 옮겨봅시다
 
 # 블로그 url 설정하기
 
