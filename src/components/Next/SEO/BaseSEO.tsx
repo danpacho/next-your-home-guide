@@ -21,17 +21,6 @@ function BaseSEO() {
             />
             <meta name="author" content={config.author.name} />
 
-            {/* Google Search Console Verification */}
-            <meta
-                name="google-site-verification"
-                content="Hh72HzFG6614Vo1nnkir9h8XZE5bG5FfJsqH8ogIEN0"
-            />
-            {/* Naver Search Console Verification */}
-            <meta
-                name="naver-site-verification"
-                content="c7502338aa123f374c1ddcf52cda041b42a11c8a"
-            />
-
             {/* opengraph sns preview og:... meta */}
             <meta property="og:type" content="blog" />
             <meta property="og:title" content={config.siteName} />
