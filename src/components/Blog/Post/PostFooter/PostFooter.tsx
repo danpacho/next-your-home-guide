@@ -13,8 +13,6 @@ import { useThemeMode } from "@hooks/index"
 import { ArrowUpIcon, EditIcon, LeafIcon } from "@components/UI/Atoms/Icons"
 import PostTag from "../PostTag/PostTag"
 
-import { useAtoms, _slector } from "@lib/jotai"
-
 const FooterContainer = styled.div`
     display: flex;
     flex-direction: column;

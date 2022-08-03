@@ -5,7 +5,6 @@ import { useCallback, useRef, useState } from "react"
 import { useThemeMode, useTimeout } from "@hooks/index"
 
 import { CodeCopyButton } from "./Code/CodeCopyButton"
-import media from "@styles/utils/media"
 import { IsLight } from "@typing/theme"
 
 const CodeWrapper = styled.div`
