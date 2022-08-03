@@ -54,7 +54,7 @@ interface BlogInfoType {
 }
 const blogInfo: BlogInfoType = {
     url: "https://next-your-home-guide.vercel.app",
-    siteName: "next your home guide",
+    siteName: "next your home",
     subtitle: "follw this guideline",
     copyright: `${
         authorInfo.name
