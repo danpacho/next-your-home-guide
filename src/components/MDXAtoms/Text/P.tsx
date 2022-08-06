@@ -4,6 +4,7 @@ import styled from "styled-components"
 const PStyled = styled.p`
     color: ${(p) => p.theme.fontColor};
     font-size: ${(props) => props.theme.md};
+    font-weight: 500;
 
     line-height: 1.8rem;
     margin-bottom: 1.5rem;
